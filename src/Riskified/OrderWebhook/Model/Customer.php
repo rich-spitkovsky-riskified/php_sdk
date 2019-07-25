@@ -25,11 +25,10 @@ class Customer extends AbstractModel {
         'email' => "string /^[a-z0-9,!#\$%&'\*\+\/=\?\^_`\{\|}~-]+(?:\.[a-z0-9,!#\$%&'\*\+\/=\?\^_`\{\|}~-]+)*@[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:[a-z]{2,})$/i",
         'first_name' => 'string',
         'last_name' => 'string',
-
+//        Optional parameters
         'created_at' => 'date optional',
         'updated_at' => 'date optional',
         'id' => 'string optional',
-        'group_id' => 'string optional',
         'group_name' => 'string optional',
         'note' => 'string optional',
         'orders_count' => 'number optional',
@@ -41,21 +40,12 @@ class Customer extends AbstractModel {
         'date_of_birth' => 'date optional',
         'gender' => 'string optional',
         'user_name' => 'string optional',
-        'accepts_marketing' => 'boolean optional',
-        'last_order_id' => 'string optional',
-        'last_order_name' => 'string optional',
-        'state' => 'string optional',
         'total_spent' => 'float optional',
-        'tags' => 'string optional',
         'account_type' => 'string optional',
         'first_purchase_at' => 'date optional',
         'linked_accounts' => 'number optional',
 
-        'default_address' => 'object \Address optional',
         'social' => 'array object \SocialDetails optional',
-
-        'buy_attempts' => 'number optional',
-        'sell_attempts' => 'number optional',
 
         'address' => 'object \Address optional'
     );

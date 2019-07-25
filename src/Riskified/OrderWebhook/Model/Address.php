@@ -30,7 +30,6 @@ class Address extends AbstractModel {
         'country' => 'string',
         'country_code' => 'string /^[A-Z]{2}$/i',
 
-        'name' => 'string optional',
         'company' => 'string optional',
         'address1' => 'string optional',
         'address2' => 'string optional',
