@@ -276,6 +276,37 @@ $decision = new Model\Decision(array(
 $response = $transport->decisionOrder($decision);
 echo PHP_EOL."Decision Order succeeded. Response: ".PHP_EOL.json_encode(response).PHP_EOL;
 
+### Notify Order Chargeback
+$chargeback = new Model\OrderChargeback(array(
+   'id' => '1234phpsdksimple110701',
+    'chargeback_details' => new Model\ChargebackDetails(array(
+        'id' => '1234',
+        'chargeback_at' => '2019-11-07T14:51:00Z',
+        'chargeback_amount' => 100.00,
+        'chargeback_currency' => 'USD',
+        'reason_code' => '4863',
+        'type' => 'cb',
+        'gateway' => 'payment processor'
+    )),
+    'fulfillment' => array(new Model\FulfillmentDetails(array(
+        'fulfillment_id' => '4567',
+        'created_at' => '2019-11-07T11:51:00Z',
+        'status' => 'success'
+    )),
+        new Model\FulfillmentDetails(array(
+            'fulfillment_id' => '7910',
+            'created_at' => '2019-11-07T12:51:00Z',
+            'status' => 'success'
+        ))),
+    'dispute_details' => new Model\DisputeDetails(array(
+        'case_id' => 'a5x33',
+        'status' => 'won'
+    ))
+));
+
+$response = $transport->chargebackOrder($chargeback);
+echo PHP_EOL."Chargeback Order succeeded. Response: ".PHP_EOL.json_encode(response).PHP_EOL;
+
 
 #### Cancel (Full Refund) Order
 $response = $transport->cancelOrder($order);

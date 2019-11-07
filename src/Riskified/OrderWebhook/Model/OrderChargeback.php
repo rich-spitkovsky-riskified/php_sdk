@@ -24,7 +24,7 @@ class OrderChargeback extends AbstractModel {
     protected $_fields = array(
         'id' => 'string',
         'chargeback_details' => 'object \ChargebackDetails',
-        'fulfillment' => 'object \FulfillmentDetails',
+        'fulfillment' => 'array object \FulfillmentDetails',
         'dispute_details' => 'object \DisputeDetails'
     );
 }
