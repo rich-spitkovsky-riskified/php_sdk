@@ -91,6 +91,19 @@ abstract class AbstractTransport {
         return $this->send_order($order, 'create', true);
     }
 
+
+    /**
+     * Send an Order to Riskified for an initial screen, will be synchronously reviewed based on current plan
+     * @param $order object Order to send
+     * @return object Response object
+     * @throws \Riskified\Common\Exception\BaseException on any issue
+     */
+    public function screenOrder($order) {
+        $this->url = Riskified::getHost('sync');
+        return $this->send_order($order, 'screen', true);
+    }
+
+
     /**
      * Send an Order to Riskified, will be synchronously reviewed based on current plan
      * @param $order object Order to send

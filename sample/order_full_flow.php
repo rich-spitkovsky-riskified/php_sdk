@@ -221,6 +221,9 @@ $updatedOrder = new Model\Order(array(
 $response = $transport->updateOrder($updatedOrder);
 echo PHP_EOL."Update Order succeeded. Response: ".PHP_EOL.json_encode($response).PHP_EOL;
 
+#### Screen Order
+$response = $transport->screenOrder($order);
+echo PHP_EOL."Screen Order succeeded. Response: ".PHP_EOL.json_encode($response).PHP_EOL;
 
 #### Decide Order
 $response = $transport->decideOrder($order);
