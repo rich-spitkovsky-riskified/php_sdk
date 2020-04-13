@@ -98,9 +98,9 @@ abstract class AbstractTransport {
      * @return object Response object
      * @throws \Riskified\Common\Exception\BaseException on any issue
      */
-    public function screenOrder($order) {
-        $this->url = Riskified::getHost('sync');
-        return $this->send_order($order, 'screen', true);
+    public function screenCheckout($checkout) {
+        $this->url = Riskified::getHost('screen');
+        return $this->send_checkout($checkout, 'screen', true);
     }
 
 

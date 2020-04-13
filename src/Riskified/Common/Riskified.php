@@ -71,7 +71,8 @@ class Riskified {
                 return array(
                     'default' => 'sandbox.riskified.com',
                     'account' => 'api-sandbox.riskified.com',
-                    'deco' => 'sandboxw.decopayments.com'
+                    'deco' => 'sandboxw.decopayments.com',
+                    'screen' => 'screen-sandbox.riskified.com'
                 );
             case Env::PROD:
                 return array(

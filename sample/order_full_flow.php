@@ -192,6 +192,10 @@ $checkout = new Model\Checkout($order_details);
 $response = $transport->createCheckout($checkout);
 echo PHP_EOL."Create Checkout succeeded. Response: ".PHP_EOL.json_encode($response).PHP_EOL;
 
+#### Screen Checkout
+$response = $transport->screenCheckout($checkout);
+echo PHP_EOL."Screen succeeded. Response: ".PHP_EOL.json_encode($response).PHP_EOL;
+
 
 #### Notify Checkout Denied
 $response = $transport->deniedCheckout($checkout);
@@ -220,10 +224,6 @@ $updatedOrder = new Model\Order(array(
 
 $response = $transport->updateOrder($updatedOrder);
 echo PHP_EOL."Update Order succeeded. Response: ".PHP_EOL.json_encode($response).PHP_EOL;
-
-#### Screen Order
-$response = $transport->screenOrder($order);
-echo PHP_EOL."Screen Order succeeded. Response: ".PHP_EOL.json_encode($response).PHP_EOL;
 
 #### Decide Order
 $response = $transport->decideOrder($order);
